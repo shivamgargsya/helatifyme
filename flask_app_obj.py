@@ -15,8 +15,8 @@ def get_flask_object():
         flask_app_obj.config.update(
             SESSION_COOKIE_HTTPONLY=(config.env() != 'dev'),
             SESSION_COOKIE_SECURE=(config.env() != 'dev'),
-            SQLALCHEMY_DATABASE_URI=config.database_connection_string(),
-            SQLALCHEMY_POOL_RECYCLE=150
+            #SQLALCHEMY_DATABASE_URI=config.database_connection_string(),
+            #SQLALCHEMY_POOL_RECYCLE=150
         )
 
         flask_app_obj.secret_key = config.secret_key()

@@ -10,5 +10,5 @@ api = Api(apiv1, version='1.0', title='RPA v1 APIs', description='v1 apis')
 healthcheck_api = api.namespace('Health Check APIs', description='Health Check API methods', path='/')
 
 
-rating_api=api.namespace('Recepie',description='API for Recepie adding operations ',path='/')
+recepie_api=api.namespace('Recepie',description='API for Recepie adding operations ',path='/')
 flask_app.register_blueprint(apiv1)
