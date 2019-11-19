@@ -16,12 +16,22 @@ class Unit():
 
 class Units(Query):
     db = [Unit]
-    __instance = None
     type = None
+    __instance=None
+
+    @staticmethod
+    def getInstance():
+
+        if Units.__instance == None:
+            Units()
+        return Units.__instance
 
     def __init__(self):
-        super(Units, self).__init__()
-        Units.type = Unit
+        if Units.__instance != None:
+            raise Exception("This class is a singleton!")
+        else:
+            Units.__instance = self
+        self.type = type(Unit)
 
     def get_by_name(self, name):
         units=list(filter(lambda item: item.name == name, self.db))

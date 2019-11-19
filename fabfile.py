@@ -3,9 +3,7 @@ import os.path
 import sys
 from fabric.api import task, local
 
-import tasks.migration as migration
 import tasks.server as server
-import tasks.db as db
 
 
 @task(default="true")

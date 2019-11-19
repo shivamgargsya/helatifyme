@@ -6,7 +6,7 @@ from fabric.api import task, local
 
 @failsafe
 def server_app():
-    from flask_app import flask_app
+    from helathifyme.flask_app import flask_app
     return flask_app
 
 

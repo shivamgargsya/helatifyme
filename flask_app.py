@@ -16,7 +16,12 @@ import time
 from flask_app_obj import get_flask_object
 from helathifyme.driver import Driver
 
-
+from dotenv import load_dotenv
+import os
+from pathlib import Path  # python3 only
+dir_path=os.path.dirname(os.path.abspath(__file__))
+env_path = dir_path+  '/.env'
+load_dotenv(dotenv_path=env_path)
 
 flask_app = get_flask_object()
 

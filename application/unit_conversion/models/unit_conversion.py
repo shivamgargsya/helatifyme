@@ -17,13 +17,23 @@ class UnitConversion():
 
 
 class UnitConversions(Query):
-    db = [UnitConversion]
-    __instance = None
+    db = []
     type = None
+    __instance=None
+
+    @staticmethod
+    def getInstance():
+
+        if UnitConversions.__instance == None:
+            UnitConversions()
+        return UnitConversions.__instance
 
     def __init__(self):
-        super(UnitConversion, self).__init__()
-        UnitConversion.type = UnitConversion
+        if UnitConversions.__instance != None:
+            raise Exception("This class is a singleton!")
+        else:
+            UnitConversions.__instance = self
+        self.type = type(UnitConversion)
 
     def get_by_unit_id_product_id(self, unit_id,product_id):
         conversion=list(filter(lambda item: item.unit_id == unit_id and item.product_id==product_id, self.db))

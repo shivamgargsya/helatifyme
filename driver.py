@@ -6,9 +6,9 @@ class Driver():
         pass
 
     def setup(self):
-        Units.add(Unit('gm',1))
-        Units.add(Unit('kg'),1)
-        Units.add(Unit('unit'))
-        Ingredients.add(Ingredient('rice',100,100,100,100))
-        Ingredients.add(Ingredient('tomato',100,0,100,5))
-        UnitConversions.add(UnitConversion(2,1,10))
+        Units.getInstance().add(Unit('gm',1))
+        Units.getInstance().add(Unit('kg',1))
+        Units.getInstance().add(Unit('unit'))
+        Ingredients.getInstance().add(Ingredient('rice',100,100,100,100))
+        Ingredients.getInstance().add(Ingredient('tomato',100,0,100,5))
+        UnitConversions.getInstance().add(UnitConversion(2,1,10))

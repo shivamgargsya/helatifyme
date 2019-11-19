@@ -51,6 +51,7 @@ class RecepieResource(Resource):
                 multiplication_factor=unit.multiplication_factor
             else:
                 multiplication_factor=conversions.mf
+            multiplication_factor=float(multiplication_factor)/100.0
             p_value=multiplication_factor*quantity*ingredient.p_value
             c_value=multiplication_factor*quantity*ingredient.c_value
             fi_value=multiplication_factor*quantity*ingredient.fi_value
@@ -62,7 +63,9 @@ class RecepieResource(Resource):
             ingredient_pfcf={"p_value":p_value,
                              "c_value":c_value,
                              "fi_value":fi_value,
-                             "f_value":f_value}
+                             "f_value":f_value,
+                             "name":ingredient.name,
+                             "unit":unit.name}
             ingredients.append(ingredient_pfcf)
 
         return {'total_pfcf':total_pfcf,"ingredients":ingredients},200

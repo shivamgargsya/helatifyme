@@ -17,14 +17,25 @@ class Ingredient():
          }
 
 class Ingredients(Query):
-    db=[Ingredient]
-    __instance = None
+    db=[]
     type=None
-    def __init__(self):
-        super(Ingredients,self).__init__()
-        Ingredients.type=Ingredient
+    __instance=None
 
-    def get_by_name(self,name):
+    @staticmethod
+    def getInstance():
+
+        if Ingredients.__instance == None:
+            Ingredients()
+        return Ingredients.__instance
+
+    def __init__(self):
+        if Ingredients.__instance != None:
+            raise Exception("This class is a singleton!")
+        else:
+            Ingredients.__instance = self
+        self.type=type(Ingredient)
+
+    def get_by_name(self,name:str):
         ingredients=list(filter(lambda item:item.name==name,self.db))
         if ingredients:
             return ingredients[0]
