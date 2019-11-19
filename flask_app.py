@@ -14,6 +14,7 @@ import time
 
 
 from flask_app_obj import get_flask_object
+from helathifyme.driver import Driver
 
 
 
@@ -49,4 +50,6 @@ logging.basicConfig(format='[%(asctime)s] %(levelname)s:%(message)s')
 def get_flask_app():
     return flask_app
 
+
+Driver().setup()
 

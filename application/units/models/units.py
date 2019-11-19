@@ -2,7 +2,7 @@ from helathifyme.application.common.query.Query import Query
 
 
 class Unit():
-    def __init__(self, name, multiplication_factor):
+    def __init__(self, name, multiplication_factor=None):
         self.id=None
         self.name = name
         self.multiplication_factor=multiplication_factor
