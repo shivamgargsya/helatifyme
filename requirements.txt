@@ -56,7 +56,7 @@ pytz==2018.7
 PyYAML==3.11
 redis==2.10.5
 rednose==1.1.1
-requests==2.18.4
+requests==2.20.0
 
 schema==0.6.7
 six==1.11.0
