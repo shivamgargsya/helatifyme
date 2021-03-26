@@ -13,7 +13,7 @@ colorama==0.4.1
 
 decorator==4.0.9
 docutils==0.14
-ecdsa==0.13
+ecdsa==0.13.3
 enum34==1.1.6
 Fabric3==1.14.post1
 Flask==0.10.1
